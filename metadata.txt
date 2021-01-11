@@ -3,5 +3,5 @@ name=Minimal
 description=Minimal plugin
 version=1.0
 qgisMinimumVersion=3.0
-author=Martin Dobias
-email=wonder.sk@gmail.com
+author=XXX
+email=XXX@XXX.com

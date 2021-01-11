@@ -1,6 +1,7 @@
 # encoding: utf-8
 #-----------------------------------------------------------
-# Copyright (C) 2015 Martin Dobias
+# Copyright (C) 2020 Thomas Baumann
+# based on qgis-minimal-plugin from Martin Dobias
 #-----------------------------------------------------------
 # Licensed under the terms of GNU GPL 2
 #
@@ -9,8 +10,10 @@
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #---------------------------------------------------------------------
-
-from PyQt5.QtWidgets import QAction, QMessageBox
+from qgis.core import Qgis
+from qgis.PyQt.QtWidgets import QAction, QMessageBox
+from qgis.PyQt.QtGui import QIcon
+import os
 
 def classFactory(iface):
     return MinimalPlugin(iface)
@@ -19,9 +22,10 @@ def classFactory(iface):
 class MinimalPlugin:
     def __init__(self, iface):
         self.iface = iface
+        self.plugin_dir = os.path.dirname(__file__)
 
     def initGui(self):
-        self.action = QAction(u'Go!', self.iface.mainWindow())
+        self.action =  QAction(QIcon(os.path.join(self.plugin_dir,"icon.svg")),"Go", self.iface.mainWindow())
         self.action.triggered.connect(self.run)
         self.iface.addToolBarIcon(self.action)
 
