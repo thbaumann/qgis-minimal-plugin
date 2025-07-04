@@ -1,7 +1,7 @@
 [general]
-name=Minimal
-description=Minimal plugin
+name=rD gs Layer
+description=Lädt Layer aus dem json Snippet, das bei aktiver 2FA den Admins im gS mittels Rechtsklick auf den Layer im TOC zur Verfügung steht. 
 version=1.0
-qgisMinimumVersion=3.0
-author=XXX
-email=XXX@XXX.com
+qgisMinimumVersion=3.34
+author=Thomas Baumann
+email=ist bekannt 
